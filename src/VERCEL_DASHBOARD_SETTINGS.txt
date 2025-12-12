@@ -1,0 +1,52 @@
+═══════════════════════════════════════════════════════
+EXACT VERCEL DASHBOARD SETTINGS
+═══════════════════════════════════════════════════════
+
+Go to: Your Project → Settings → General → Build & Development Settings
+
+Click "Edit" and enter EXACTLY these values:
+
+┌─────────────────────────────────────┐
+│ Framework Preset:                    │
+│ Vite                                 │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│ Build Command:                       │
+│ npm run build                        │
+│ [✓] Override                         │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│ Output Directory:                    │
+│ dist                                 │
+│ [✓] Override                         │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│ Install Command:                     │
+│ npm install                          │
+│ [✓] Override                         │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│ Root Directory:                      │
+│ ./                                   │
+│ (leave as default)                   │
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│ Node.js Version:                     │
+│ 18.x                                 │
+└─────────────────────────────────────┘
+
+IMPORTANT NOTES:
+- Make sure "Override" is CHECKED (✓) for Build Command, Output Directory, and Install Command
+- Framework MUST be "Vite" (not "Other" or "Create React App")
+- Output Directory is "dist" NOT "build" or "out"
+
+═══════════════════════════════════════════════════════
+
+After saving, go to Deployments tab and click "Redeploy"
+
+═══════════════════════════════════════════════════════
