@@ -52,31 +52,55 @@ The optimized production build will be available in the `dist` folder.
 
 ## 🚀 Deploying to Vercel
 
-### Option 1: Deploy via Vercel CLI
+### Prerequisites for Deployment
 
-1. Install Vercel CLI:
+Make sure all these files are committed to your GitHub repository:
+- `index.html`
+- `src/main.tsx`
+- `package.json`
+- `vite.config.js`
+- `vercel.json`
+- `tsconfig.json`
+- All component files in `/components`
+- All style files in `/styles`
+
+### Deployment Steps
+
+1. **Commit all files to GitHub:**
 ```bash
-npm install -g vercel
+git add .
+git commit -m "Add deployment configuration"
+git push origin main
 ```
 
-2. Deploy:
-```bash
-vercel
-```
+2. **Deploy on Vercel:**
+   - Go to [Vercel](https://vercel.com)
+   - Click "Import Project"
+   - Select your GitHub repository
+   - Vercel will auto-detect the settings from `vercel.json`
+   - Click "Deploy"
 
-### Option 2: Deploy via GitHub
+### Manual Vercel Configuration (if needed)
 
-1. Push your code to GitHub
-2. Go to [Vercel](https://vercel.com)
-3. Import your GitHub repository
-4. Vercel will automatically detect the framework and deploy
+If auto-detection fails, set these in Vercel dashboard:
 
-**Note**: The project includes a `vercel.json` configuration file that specifies:
-- Build command: `npm run build`
-- Output directory: `dist`
-- SPA routing configuration
+**Framework Preset:** Vite
 
-If you encounter any build errors, ensure all configuration files (`package.json`, `vite.config.js`, `vercel.json`) are committed to your repository.
+**Build & Development Settings:**
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Install Command: `npm install`
+
+**Root Directory:** `./` (leave as default)
+
+### Troubleshooting
+
+If you still see "No Output Directory" error:
+
+1. Check the build logs in Vercel dashboard
+2. Ensure all files listed in Prerequisites are in your repo
+3. Try deleting the Vercel project and re-importing
+4. Make sure `package.json` has correct build script: `"build": "vite build"`
 
 ## 🛠️ Tech Stack Used
 
